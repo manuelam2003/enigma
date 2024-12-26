@@ -3,7 +3,6 @@ from reflector import Reflector
 from plugboard import Plugboard
 from enigma import EnigmaMachine
 from analyzer import EnigmaAnalyzer
-from analyzer2 import EnigmaAnalyzer2
 
 def main():
     rotor1 = Rotor("EKMFLGDQVZNTOWYHXUSPAIBRCJ", notch='Q', position=0)
@@ -31,9 +30,9 @@ def main():
     #     rotor.position = original_positions[i]
   
     # Use EnigmaAnalyzer with a crib to analyze the message
-    # crib = "LD"
-    # analyzer = EnigmaAnalyzer2(crib)
-    # analyzer.decrypt_with_crib(encrypted, enigma)
+    crib = "WORLD"
+    analyzer = EnigmaAnalyzer(crib)
+    analyzer.decrypt_with_crib(encrypted, enigma)
 
 if __name__ == "__main__":
     main()
